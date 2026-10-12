@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản Lý Thời Gian | Mastering Every Second</title>
+  <meta name="description"
+    content="Time management, build productive habits, prioritize important tasks, and explore an interactive smart watch experience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Ambient background lighting effects -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="nav-bar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <span class="logo-icon">⏳</span>
+        <span class="logo-text">ChronoValue</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#actions">What We Do</a></li>
+        <li><a href="#plan">My Plan</a></li>
+        <li><a href="#smartwatch">Smart Watch</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <a href="#smartwatch" class="cta-pill">Launch Watch</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 1. Header (Phần đầu trang) -->
+  <header id="hero-header">
+    <div class="header-container">
+      <div class="header-badge">
+        <span class="pulse-dot"></span>
+        <span>Mindful Time Management</span>
+      </div>
+      <h1 class="main-title">Time management</h1>
+      <blockquote class="hero-quote">
+        <span class="quote-mark">“</span>
+        <p class="quote-text">You cannot add hours to a day, but you can add value to each hour.</p>
+        <span class="quote-mark end-mark">”</span>
+      </blockquote>
+
+      <div class="hero-metrics">
+        <div class="metric-card">
+          <div class="metric-val" id="day-progress-pct">0%</div>
+          <div class="metric-label">Today Completed</div>
+          <div class="progress-bar-wrap">
+            <div class="progress-fill" id="day-progress-bar"></div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">86,400</div>
+          <div class="metric-label">Seconds Given Daily</div>
+          <div class="metric-sub">Non-refundable gift</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val" id="live-hero-clock">--:--:--</div>
+          <div class="metric-label">Current Local Time</div>
+          <div class="metric-sub">Active & ticking</div>
+        </div>
+      </div>
+
+      <div class="scroll-prompt">
+        <a href="#actions" class="scroll-link">
+          <span>Explore Guide</span>
+          <span class="chevron-down">↓</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 2. Section 1: What We Do (Những việc cần làm để tránh lãng phí thời gian) -->
+    <section id="actions" class="content-section">
+      <div class="section-container">
+        <div class="section-tag">
+          <span class="tag-number">01</span>
+          <span>Effective Habits</span>
+        </div>
+        <h2 class="section-title">What We Do</h2>
+
+        <div class="actions-grid">
+          <!-- Action Item 1 -->
+          <div class="action-card">
+            <div class="action-card-header">
+              <div class="action-badge">Action 01</div>
+              <span class="action-icon">📋</span>
+            </div>
+            <h3 class="action-headline">Have a to-do list.</h3>
+
+            <!-- Interactive Mini To-Do List Widget -->
+            <div class="action-interactive-box">
+              <div class="todo-widget-header">
+                <span class="todo-title">Interactive Checklist</span>
+                <span class="todo-counter" id="todo-count">1/3 Done</span>
+              </div>
+              <div class="todo-list" id="todo-list">
+                <label class="todo-item done">
+                  <input type="checkbox" checked data-task="Review morning schedule">
+                  <span class="custom-check"></span>
+                  <span class="task-text">Review morning schedule</span>
+                </label>
+                <label class="todo-item">
+                  <input type="checkbox" data-task="Finish school assignments">
+                  <span class="custom-check"></span>
+                  <span class="task-text">Finish school assignments</span>
+                </label>
+                <label class="todo-item">
+                  <input type="checkbox" data-task="Plan timetable for tomorrow">
+                  <span class="custom-check"></span>
+                  <span class="task-text">Plan timetable for tomorrow</span>
+                </label>
+              </div>
+              <form id="add-todo-form" class="todo-add-form">
+                <input type="text" id="todo-input" placeholder="Add custom action..." maxlength="50" autocomplete="off">
+                <button type="submit" class="todo-add-btn">+</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Action Item 2 -->
+          <div class="action-card">
+            <div class="action-card-header">
+              <div class="action-badge">Action 02</div>
+              <span class="action-icon">⏰</span>
+            </div>
+            <h3 class="action-headline">Go to school on time and finish tasks.</h3>
+
+            <div class="action-interactive-box punctuality-box">
+              <div class="punctuality-stat">
+                <div class="punc-icon">🎯</div>
+                <div>
+                  <strong>Punctuality Rule</strong>
+                  <p>5 minutes early = Calm focus</p>
+                </div>
+              </div>
+              <div class="discipline-meter">
+                <div class="meter-label">
+                  <span>Task Completion</span>
+                  <span class="meter-score">100%</span>
+                </div>
+                <div class="meter-bar">
+                  <div class="meter-fill"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Item 3 -->
+          <div class="action-card">
+            <div class="action-card-header">
+              <div class="action-badge">Action 03</div>
+              <span class="action-icon">🚀</span>
+            </div>
+            <h3 class="action-headline">Stop waiting, work anytime, and have no fixed place.</h3>
+
+            <div class="action-interactive-box agile-box">
+              <div class="agile-tags">
+                <span class="agile-tag">⚡ Mobile Mindset</span>
+                <span class="agile-tag">🎒 Work Anywhere</span>
+                <span class="agile-tag">⏱️ No Fixed Place</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Section 2: My Plan (Kế hoạch của tôi) -->
+    <section id="plan" class="content-section">
+      <div class="section-container">
+        <div class="section-tag">
+          <span class="tag-number">02</span>
+          <span>Strategy</span>
+        </div>
+        <h2 class="section-title">My Plan</h2>
+
+        <div class="plan-steps-container">
+          <div class="plan-step-card">
+            <!-- Pure Keyword Badges / Grid -->
+            <div class="keywords-grid">
+              <div class="keyword-item kw-urgent">
+                <span class="kw-icon">⚡</span>
+                <div class="kw-content">
+                  <span class="kw-label">Priority 1</span>
+                  <h4 class="kw-name">Important Things</h4>
+                  <span class="kw-action">Do First</span>
+                </div>
+              </div>
+
+              <div class="keyword-item kw-later">
+                <span class="kw-icon">⏳</span>
+                <div class="kw-content">
+                  <span class="kw-label">Priority 2</span>
+                  <h4 class="kw-name">Things To Do Later</h4>
+                  <span class="kw-action">Schedule</span>
+                </div>
+              </div>
+
+              <div class="keyword-item kw-plan">
+                <span class="kw-icon">📋</span>
+                <div class="kw-content">
+                  <span class="kw-label">Strategy</span>
+                  <h4 class="kw-name">Clear Plan</h4>
+                  <span class="kw-action">Organize</span>
+                </div>
+              </div>
+
+              <div class="keyword-item kw-timetable">
+                <span class="kw-icon">⏰</span>
+                <div class="kw-content">
+                  <span class="kw-label">Routine</span>
+                  <h4 class="kw-name">Timetable</h4>
+                  <span class="kw-action">Execute</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Section 3: Smart Watch (Đồng hồ thông minh) -->
+    <section id="smartwatch" class="content-section">
+      <div class="section-container">
+        <div class="section-tag">
+          <span class="tag-number">03</span>
+          <span>Time Engine</span>
+        </div>
+        <h2 class="section-title">Smart Watch</h2>
+        <!-- Smart Watch Hardware Mockup & Functional UI -->
+        <div class="watch-showcase-wrapper">
+          <div class="watch-device-outer">
+            <!-- Watch Crown & Side Button -->
+            <div class="watch-crown" title="Digital Crown" id="watch-crown"></div>
+            <div class="watch-button" title="Side Button" id="watch-side-btn"></div>
+            <div class="watch-strap top-strap"></div>
+            <div class="watch-strap bottom-strap"></div>
+
+            <!-- Watch Bezel & Screen -->
+            <div class="watch-case">
+              <div class="watch-screen" id="watch-screen">
+                <!-- Watch Status Bar -->
+                <div class="watch-status-bar">
+                  <span class="watch-net-indicator">● SYNCED</span>
+                  <span class="watch-mini-clock" id="watch-status-time">12:00</span>
+                  <span class="watch-battery">🔋 98%</span>
+                </div>
+
+                <!-- Navigation Tabs inside Smart Watch -->
+                <div class="watch-nav-tabs">
+                  <button class="watch-nav-btn active" data-watch-tab="clock">Clock</button>
+                  <button class="watch-nav-btn" data-watch-tab="calendar">Calendar</button>
+                  <button class="watch-nav-btn" data-watch-tab="stopwatch">Stopwatch</button>
+                  <button class="watch-nav-btn" data-watch-tab="countdown">Countdown</button>
+                  <button class="watch-nav-btn" data-watch-tab="alarm">Alarm</button>
+                </div>
+
+                <!-- Watch View 1: Clock (Time, Minutes, Seconds Sync) -->
+                <div class="watch-view active" id="view-clock">
+                  <div class="analog-face" id="analog-face">
+                    <div class="analog-dial">
+                      <span class="dial-mark mark-12">12</span>
+                      <span class="dial-mark mark-3">3</span>
+                      <span class="dial-mark mark-6">6</span>
+                      <span class="dial-mark mark-9">9</span>
+                      <div class="hand hour-hand" id="analog-hour"></div>
+                      <div class="hand minute-hand" id="analog-min"></div>
+                      <div class="hand second-hand" id="analog-sec"></div>
+                      <div class="center-cap"></div>
+                    </div>
+                  </div>
+
+                  <div class="digital-time-display">
+                    <div class="digits-row">
+                      <span class="big-digits" id="watch-time-hours">00</span>
+                      <span class="colon-blink">:</span>
+                      <span class="big-digits" id="watch-time-minutes">00</span>
+                      <span class="colon-blink">:</span>
+                      <span class="big-digits sec-accent" id="watch-time-seconds">00</span>
+                    </div>
+                    <div class="date-row" id="watch-date-full">Friday, Oct 8, 2026</div>
+                    <div class="network-sync-pill">
+                      <span class="sync-dot"></span> Network Synced (Atomic Precision)
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Watch View 2: Calendar -->
+                <div class="watch-view" id="view-calendar">
+                  <div class="calendar-view-header">
+                    <span id="cal-month-name">October 2026</span>
+                    <span class="cal-today-tag">Today</span>
+                  </div>
+                  <div class="mini-calendar-grid" id="mini-calendar-grid">
+                    <!-- Populated via JS -->
+                  </div>
+                  <div class="calendar-day-summary" id="cal-day-summary">
+                    24h available today. Make each hour purposeful!
+                  </div>
+                </div>
+
+                <!-- Watch View 3: Stopwatch -->
+                <div class="watch-view" id="view-stopwatch">
+                  <div class="stopwatch-display">
+                    <span class="sw-time" id="sw-time-display">00:00.00</span>
+                  </div>
+                  <div class="stopwatch-buttons">
+                    <button class="watch-action-btn primary" id="sw-toggle-btn">Start</button>
+                    <button class="watch-action-btn secondary" id="sw-lap-btn" disabled>Lap</button>
+                    <button class="watch-action-btn secondary" id="sw-reset-btn" disabled>Reset</button>
+                  </div>
+                  <div class="stopwatch-laps" id="sw-laps-list">
+                    <div class="lap-placeholder">No laps recorded</div>
+                  </div>
+                </div>
+
+                <!-- Watch View 4: Countdown -->
+                <div class="watch-view" id="view-countdown">
+                  <div class="countdown-display">
+                    <span class="cd-time" id="cd-time-display">05:00</span>
+                  </div>
+                  <div class="cd-preset-buttons">
+                    <button class="cd-preset active" data-cd="300">5 Min</button>
+                    <button class="cd-preset" data-cd="600">10 Min</button>
+                    <button class="cd-preset" data-cd="900">15 Min</button>
+                    <button class="cd-preset" data-cd="1500">25 Min</button>
+                  </div>
+                  <div class="stopwatch-buttons">
+                    <button class="watch-action-btn primary" id="cd-toggle-btn">Start</button>
+                    <button class="watch-action-btn secondary" id="cd-reset-btn">Reset</button>
+                  </div>
+                  <div class="cd-msg" id="cd-status-msg">Set target duration and initiate</div>
+                </div>
+
+                <!-- Watch View 5: Alarm -->
+                <div class="watch-view" id="view-alarm">
+                  <div class="alarm-controls">
+                    <div class="alarm-item">
+                      <div class="alarm-info">
+                        <span class="alarm-time">06:30 AM</span>
+                        <span class="alarm-label">Morning Routine & School</span>
+                      </div>
+                      <label class="switch">
+                        <input type="checkbox" checked id="alarm-toggle-1">
+                        <span class="slider"></span>
+                      </label>
+                    </div>
+                    <div class="alarm-item">
+                      <div class="alarm-info">
+                        <span class="alarm-time">08:00 PM</span>
+                        <span class="alarm-label">Study & Task Review</span>
+                      </div>
+                      <label class="switch">
+                        <input type="checkbox" checked id="alarm-toggle-2">
+                        <span class="slider"></span>
+                      </label>
+                    </div>
+                    <div class="alarm-item custom-alarm">
+                      <input type="time" id="custom-alarm-input" value="07:00">
+                      <button id="add-alarm-btn" class="watch-action-btn primary sm-btn">Set Alarm</button>
+                    </div>
+                  </div>
+                  <div class="alarm-status-banner" id="alarm-banner">Alarms active & synced</div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Watch Feature Highlights Details -->
+          <div class="watch-features-list">
+            <div class="feature-detail-card">
+              <div class="feature-icon">🌐</div>
+              <div>
+                <h4>Exact Network Synchronization</h4>
+              </div>
+            </div>
+            <div class="feature-detail-card">
+              <div class="feature-icon">📅</div>
+              <div>
+                <h4>Built-in Dynamic Calendar</h4>
+              </div>
+            </div>
+            <div class="feature-detail-card">
+              <div class="feature-icon">⏱️</div>
+              <div>
+                <h4>Stopwatch & Countdown Timers</h4>
+              </div>
+            </div>
+            <div class="feature-detail-card">
+              <div class="feature-icon">🔔</div>
+              <div>
+                <h4>Smart Alarms & Notifications</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 6. Footer (Phần kết) -->
+  <footer id="main-footer">
+    <div class="footer-container">
+      <div class="footer-hero-quote">
+        <p class="final-quote-text">
+          After all, I want to say:
+          <span class="quote-highlight">“If you do not value time, you will become crazy and out of control.”</span>
+        </p>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-bottom">
+        <div class="footer-brand">
+          <span class="footer-logo">⏳ ChronoValue</span>
+          <span class="footer-sub">Quản Lý Thời Gian • 24 Hours Philosophy</span>
+        </div>
+        <div class="footer-rights">
+          <p>© <span id="current-year">2026</span> All rights reserved. Crafted with care for purposeful living.</p>
+        </div>
+        <div class="footer-back-top">
+          <a href="#hero-header" class="back-to-top-btn" title="Back to top">
+            <span>Back to Top</span>
+            <span>↑</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
